@@ -1,7 +1,23 @@
-# Apache Beam - Kafka - Kotlin boilerplate
+# Apache Beam - Kafka - Kotlin Boilerplate
 
 ## Project Overview
 This project is a boilerplate setup for Kafka and Apache Beam integration, built using Gradle and Kotlin. It leverages Apache Beam for data processing and Kafka for messaging.
+
+## BigQuery Integration Sample
+This project includes a sample program for writing data to Google BigQuery using Apache Beam. The code resides in a file named `MainBigqueryWrite.kt`. Below is a brief overview of the functionality:
+
+The program demonstrates how to:
+- Configure Google Cloud Platform (GCP) settings such as the project ID and temporary bucket location.
+- Define a pipeline using Apache Beam.
+- Write data to a BigQuery table with schema and table specifications.
+
+Key configurations:
+- **Write Disposition**: `WRITE_TRUNCATE` (overwrites existing data).
+- **Create Disposition**: `CREATE_IF_NEEDED` (creates the table if it doesn’t exist).
+
+Refer to `MainBigqueryWrite.kt` for the complete implementation.
+
+---
 
 ## Package Versions
 
@@ -73,10 +89,12 @@ To build and run the project, use the following commands:
 ./gradlew run
 ```
 
-## Kafka Server details
-download source
+## Kafka Server Details
+Download source:
 https://downloads.apache.org/kafka/3.9.0/kafka_2.12-3.9.0.tgz
-unzip and navigate to bin directory and run following commands to start kafka server 
+
+Unzip and navigate to the `bin` directory, then run the following commands to start the Kafka server:
+
 ```bash
 ./kafka-server-start.sh ../config/server.properties
 ./kafka-console-producer.sh --broker-list localhost:9092 --topic bct --property "parse.key=true" --property  "key.separator=:"
@@ -85,3 +103,4 @@ unzip and navigate to bin directory and run following commands to start kafka se
 
 ## License
 This project is licensed under the Apache License, Version 2.0.
+

@@ -18,6 +18,11 @@ dependencies {
     implementation("org.apache.beam:beam-runners-direct-java:$beamVersion")
     implementation("org.apache.beam:beam-sdks-java-io-kafka:$beamVersion")
     implementation("org.apache.kafka:kafka-clients:3.9.0")
+
+// below libraries are required to add bigquery support
+    implementation("org.apache.beam:beam-sdks-java-io-google-cloud-platform:$beamVersion")
+    implementation("com.google.cloud:google-cloud-bigquery:2.45.0")
+
     testImplementation("org.jetbrains.kotlin:kotlin-test")
 }
 
